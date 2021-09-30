@@ -1,4 +1,22 @@
+* {
+  scroll-behavior: smooth;
+}
+
+
 .App {
+  background-color: rgb(158, 190, 216);
+  min-height: 100vh;
+  /* min-width: 100vh; */
+  /* margin: 20px; */
+  padding-top: 150px;
+  padding-bottom: 80px;
+  /* box-sizing: border-box; */
+
+}
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +53,5 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+

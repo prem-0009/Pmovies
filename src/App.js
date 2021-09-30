@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import "./App.css";
+import Header from "./components/Header/Header";
+import SimpleBottomNavigation from "./components/Footer/Footer";
+import Trending from "./Pages/Trending/Trending";
+import Movies from "./Pages/Movies/Movies";
+import Shows from "./Pages/Shows/Shows";
+import Search from "./Pages/Search/Search";
+import { Container } from "@mui/material";
+// import { Switch } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+        <Header />
+      <div className="App">
+        <Container>
+          <Switch>
+            <Route exact path="/" component={Trending} />
+            <Route exact path="/movies" component={Movies} />
+            <Route exact path="/shows" component={Shows} />
+            <Route exact path="/search" component={Search} />
+          </Switch>
+        </Container>
     </div>
+        <SimpleBottomNavigation />
+      </BrowserRouter>
   );
 }
 
