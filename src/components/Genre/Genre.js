@@ -10,12 +10,12 @@ const Genre = ({
   type,
   setPage,
 }) => {
+  
   const fetchGenres = async () => {
     const { data } = await axios.get(
       ` https://api.themoviedb.org/3/genre/${type}/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     setGenre(data.genres);
-    // console.log(data);
   };
 
   const handleDelete = (e) => {
@@ -28,15 +28,10 @@ const Genre = ({
     setSelectedGenre([e, ...selectedGenre]);
     setGenre(genre.filter((item) => item.id !== e.id));
     setPage(1);
-    // console.log(selectedGenre)
   };
-
-  //   console.log(genre);
 
   useEffect(() => {
     fetchGenres();
-    console.log(selectedGenre);
-    
   }, []);
 
   return (

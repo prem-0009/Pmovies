@@ -35,10 +35,10 @@ export default function SimpleBottomNavigation() {
         sx={{ width: '100%', backgroundColor:'black', bottom:0, position:'fixed' }}
         
       >
-        <BottomNavigationAction  sx={{color:'white'}} label="Trending" icon={<TrendingUpIcon />} />
-        <BottomNavigationAction  sx={{color:'white'}} label="Movies" icon={<LocalMoviesIcon />} />
-        <BottomNavigationAction  sx={{color:'white'}} label="TvShows" icon={<TvIcon />} />
-        <BottomNavigationAction  sx={{color:'white'}} label="Search" icon={<SearchIcon />} />
+        <BottomNavigationAction  sx={{color:'blanchedalmond'}} label="Trending" icon={<TrendingUpIcon />} />
+        <BottomNavigationAction  sx={{color:'blanchedalmond'}} label="Movies" icon={<LocalMoviesIcon />} />
+        <BottomNavigationAction  sx={{color:'blanchedalmond'}} label="TvShows" icon={<TvIcon />} />
+        <BottomNavigationAction  sx={{color:'blanchedalmond'}} label="Search" icon={<SearchIcon />} />
       </BottomNavigation>
     </Box>
   );

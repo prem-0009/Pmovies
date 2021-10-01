@@ -1,7 +1,5 @@
-.search-pg{
-    /* height: 100%; */
-    display: flex;
-    /* border: 2px solid black; */
-    margin: auto;
-    width: 70%;
+.search-pg {
+  display: flex;
+  margin: auto;
+  width: 70%;
 }

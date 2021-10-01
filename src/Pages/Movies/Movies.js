@@ -5,16 +5,15 @@ import CustomPagination from "../../components/Pagination/CustomPagination";
 import Genre from "../../components/Genre/Genre";
 import useGenres from "../../components/hooks/useGenres";
 
-// import "./shows.css";
 
 const Movies = () => {
-  const [latest , setLatest] = useState([]);
+
+  const [latest, setLatest] = useState([]);
   const [page, setPage] = useState(1);
   const [genre, setGenre] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState([]);
   const genreForUrl = useGenres(selectedGenre);
-
-  console.log(genreForUrl);
+  const [numberOfPages, setNumberOfPages] = useState();
 
   const fetchLatest = async () => {
     const { data } = await axios.get(
@@ -22,6 +21,7 @@ const Movies = () => {
     );
 
     setLatest(data.results);
+    setNumberOfPages(data.total_pages);
   };
 
   useEffect(() => {
@@ -52,7 +52,9 @@ const Movies = () => {
             />
           ))}
       </div>
-      <CustomPagination setPage={setPage} />
+      {numberOfPages > 1 && (
+        <CustomPagination setPage={setPage} numberOfPages={numberOfPages} />
+      )}
     </div>
   );
 };

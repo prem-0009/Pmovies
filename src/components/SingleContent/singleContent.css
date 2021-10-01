@@ -2,20 +2,15 @@
   margin: 10px;
   z-index: 0;
   position: relative;
-/* box-sizing: border-box;   */
 }
 
 .single {
   display: flex;
   flex-direction: column;
   width: 200px;
-
   padding: 3px;
-  
   border-radius: 8px;
-
   font-size: 0.9rem;
-  /* box-sizing: border-box; */
 }
 
 .poster {
@@ -26,45 +21,22 @@
 .title-name {
   position: absolute;
   margin-bottom: 0px;
-  /* border: 2px solid yellowgreen; */
-  /* display: flex;
-  justify-content: center; */
-
   color: white;
   align-items: center;
   bottom: 0px;
   right: 0;
   left: 0;
-  /* text-align: center; */
-  /* box-sizing: border-box; */
-  /* margin: auto; */
   width: 100%;
-  /* padding:50px?; */
-  /* display: flex;
-  justify-content: center; */
-  /* z-index: 2; */
 }
 
-.text{
-    margin: auto;
-    width: 97%;
-    /* padding: 10; */
-    /* bottom: 10px; */
-    /* margin: 10; */
-    /* overflow: hidden; */
-    /* border: 2px solid black; */
-    text-align: center;
-    /* background-color: black; */
-    background-image: linear-gradient(to bottom, rgba(32,32,32,.01), rgba(0,0,0,1));
-    /* z-index: 0; */
-    /* overflow: hidden; */
-  
-}
-/* .title > span {
-  font-size: 14px;
-  margin: 0;
-  font-weight: 400;
+.text {
+  margin: auto;
+  width: 97%;
   text-align: center;
-  color: #fff;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
-} */
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(32, 32, 32, 0.01),
+    rgba(0, 0, 0, 1)
+  );
+}

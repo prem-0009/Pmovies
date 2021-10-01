@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import SearchIcon from "@mui/icons-material/Search";
-import "./search.css";
-import { Button, Tabs, Tab } from "@mui/material";
+import { Tabs, Tab } from "@mui/material";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 
-export default function Search() {
-  const [searchWord, setSearchWord] = useState("");
+import "./search.css";
 
+export default function Search() {
+
+  const [searchWord, setSearchWord] = useState("");
   const [type, setType] = useState(0);
   const [searched, setSearched] = useState([]);
   const [page, setPage] = useState(1);
-  const [numberOfPages, setNumberOfPages] = useState()
+  const [numberOfPages, setNumberOfPages] = useState();
 
   const fetchSearching = async () => {
     try {
@@ -22,20 +21,16 @@ export default function Search() {
         ` https://api.themoviedb.org/3/search/${type}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false&query=${searchWord}&page=${page}`
       );
       setSearched(data.results);
-      setNumberOfPages(data.total_pages)
+      setNumberOfPages(data.total_pages);
     } catch (e) {
       console.log(e);
     }
   };
-
-  const handleChange = (event, newValue) => {
-    console.log(newValue);
-
+  //event e is necessary..
+  const handleChange = (e, newValue) => {
     setType(newValue);
     setPage(1);
-    // console.log(type);
   };
-  // console.log(page);
 
   const onChangeSearchText = (searchText) => {
     setSearchWord(searchText);
@@ -43,10 +38,6 @@ export default function Search() {
 
   useEffect(() => {
     fetchSearching();
-    // console.log(type);
-    // console.log(searchWord);
-    // console.log(searched);
-    // console.log(page);
   }, [type, page, searchWord]);
 
   return (
@@ -59,24 +50,12 @@ export default function Search() {
           sx={{ margin: "0px 0px", width: "70%", flex: "1" }}
           onChange={(e) => onChangeSearchText(e.target.value)}
         />
-        {/* <Button
-          variant="contained"
-          // sx={{ marginLeft: 10 }}
-        >
-          <SearchIcon
-            sx={{
-              //  border: "2px solid green",
-              margin: "2px",
-              //  padding:'10px'
-            }}
-            fontSize="large"
-          />
-        </Button> */}
+        
       </div>
       <div>
         <Tabs
           value={type}
-          onChange={(e, value) => handleChange(e, value)}
+          onChange={( e, value) => handleChange(e, value)}
           aria-label="basic tabs example"
           centered
         >
