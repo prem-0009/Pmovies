@@ -6,7 +6,7 @@ import  no_img from '../../images/noPoster.png'
 
 
 const SingleContent = (props) => {
-  const { id, title, poster, vote, date } = props;
+  const {  title, poster, vote,  } = props;
 
   return (
     <Badge badgeContent={vote || `NR`} color="primary" className="badge">

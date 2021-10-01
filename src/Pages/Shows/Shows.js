@@ -12,7 +12,6 @@ const Movies = () => {
   const [genre, setGenre] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState([]);
   const genreForUrl = useGenres(selectedGenre);
-
   const [numberOfPages, setNumberOfPages] = useState();
 
   const fetchLatest = async () => {
@@ -26,8 +25,8 @@ const Movies = () => {
 
   useEffect(() => {
     window.scroll(0, 0);
-
     fetchLatest();
+    // eslint-disable-next-line
   }, [page, genreForUrl]);
 
   return (

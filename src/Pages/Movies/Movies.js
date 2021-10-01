@@ -26,6 +26,7 @@ const Movies = () => {
 
   useEffect(() => {
     fetchLatest();
+    // eslint-disable-next-line
   }, [page, genreForUrl]);
 
   return (

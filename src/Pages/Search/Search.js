@@ -8,7 +8,6 @@ import CustomPagination from "../../components/Pagination/CustomPagination";
 import "./search.css";
 
 export default function Search() {
-
   const [searchWord, setSearchWord] = useState("");
   const [type, setType] = useState(0);
   const [searched, setSearched] = useState([]);
@@ -16,6 +15,7 @@ export default function Search() {
   const [numberOfPages, setNumberOfPages] = useState();
 
   const fetchSearching = async () => {
+    
     try {
       const { data } = await axios.get(
         ` https://api.themoviedb.org/3/search/${type}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false&query=${searchWord}&page=${page}`
@@ -38,6 +38,7 @@ export default function Search() {
 
   useEffect(() => {
     fetchSearching();
+    // eslint-disable-next-line
   }, [type, page, searchWord]);
 
   return (
@@ -50,12 +51,11 @@ export default function Search() {
           sx={{ margin: "0px 0px", width: "70%", flex: "1" }}
           onChange={(e) => onChangeSearchText(e.target.value)}
         />
-        
       </div>
       <div>
         <Tabs
           value={type}
-          onChange={( e, value) => handleChange(e, value)}
+          onChange={(e, value) => handleChange(e, value)}
           aria-label="basic tabs example"
           centered
         >
