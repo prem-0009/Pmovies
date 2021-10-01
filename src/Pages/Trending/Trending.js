@@ -23,7 +23,6 @@ const Trending = () => {
 
   return (
     <div>
-      <span className="title">trending</span>
       <div className="trending">
         {trending &&
           trending.map((item) => (
