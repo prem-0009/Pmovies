@@ -5,10 +5,10 @@ The main 'Trending' page.
 
 The seondary 'Movies' page.
 
-<img width="1276" alt="image" src="https://user-images.githubusercontent.com/48194238/135655494-aa7d763c-071d-4a6a-9d75-ef3baecf7abd.png">
+<img width="565" alt="image" src="https://user-images.githubusercontent.com/48194238/135655494-aa7d763c-071d-4a6a-9d75-ef3baecf7abd.png">
 
 
 The secondary 'Search' page.
 
-<img width="1351" alt="image" src="https://user-images.githubusercontent.com/48194238/135655544-a8570df3-5d93-4b36-afc4-bc62e919eaa5.png">
+<img width="565" alt="image" src="https://user-images.githubusercontent.com/48194238/135655544-a8570df3-5d93-4b36-afc4-bc62e919eaa5.png">
 
