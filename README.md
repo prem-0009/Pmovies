@@ -1,6 +1,6 @@
 The main 'Trending' page.
 
-<img width="1265" alt="image" src="https://user-images.githubusercontent.com/48194238/135655217-bfdfc2ed-7148-4a56-9c0a-8e5ba5719aa2.png">
+<img width="265" alt="image" src="https://user-images.githubusercontent.com/48194238/135655217-bfdfc2ed-7148-4a56-9c0a-8e5ba5719aa2.png">
 
 
 The seondary 'Movies' page.
