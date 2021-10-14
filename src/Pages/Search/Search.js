@@ -9,13 +9,12 @@ import "./search.css";
 
 export default function Search() {
   const [searchWord, setSearchWord] = useState("");
-  const [type, setType] = useState(0);
+  const [type, setType] = useState("movie");
   const [searched, setSearched] = useState([]);
   const [page, setPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState();
 
   const fetchSearching = async () => {
-    
     try {
       const { data } = await axios.get(
         ` https://api.themoviedb.org/3/search/${type}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false&query=${searchWord}&page=${page}`
@@ -37,7 +36,8 @@ export default function Search() {
   };
 
   useEffect(() => {
-    fetchSearching();
+    if (searchWord) fetchSearching();
+
     // eslint-disable-next-line
   }, [type, page, searchWord]);
 
@@ -74,6 +74,7 @@ export default function Search() {
               poster={item.poster_path}
               vote={item.vote_average}
               date={item.first_air_date || item.release_date}
+              backdrop_path={item.backdrop_path}
             />
           ))}
       </div>
